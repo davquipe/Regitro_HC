@@ -30,9 +30,9 @@ public class Paciente {
                 + "\n Edad: "+edad+"\n Genero: "+genero);
     }    
 
-    public Paciente(String ide2, String nom2, String apw2, String esp2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
+
+   
     public void verPaciente(){
         JOptionPane.showMessageDialog(null,"Identificacion: "+identificacion+"\n Nombre: "+nombre+" "
                 + "\n Edad: "+edad+"\n Genero: "+genero);

@@ -9,6 +9,7 @@ import historialclinico.HistorialClinico;
 import historialclinico.Medico;
 import historialclinico.Paciente;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -41,6 +42,9 @@ public static List<Medico> listam=new LinkedList<Medico>();
                     + "2.- GESTIONAR MEDICOS \n"
                     + "3.- GESTIONAR HISTORIAL CLINICO \n"
                     + "4.- Salir"));
+            
+                
+            
             switch(opt){
                 case 1: paciente();break;
                 case 2: medicos();break;
@@ -52,7 +56,7 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void paciente() {
-        // TODO code application logic here
+        
         
         int opt=0;
         do{
@@ -74,7 +78,7 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void medicos() {
-        // TODO code application logic here
+        
         
         int opt=0;
         do{
@@ -96,7 +100,7 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void historial() {
-        // TODO code application logic here
+        
         
         int opt=0;
         do{
@@ -118,17 +122,17 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void registrarp() {
-        int ide=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Identificacion: "));
-        String nom=JOptionPane.showInputDialog("Ingrese Nombre: ");
-        int eda=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Edad: "));
-        String gen=JOptionPane.showInputDialog("Ingrese Genero: ");
+        int ide=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Identificacion (#): "));
+        String nom=JOptionPane.showInputDialog("Ingrese Nombre (Abc): ");
+        int eda=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Edad (#): "));
+        String gen=JOptionPane.showInputDialog("Ingrese Genero (Abc): ");
 
         listap.add(new Paciente(ide,nom,eda,gen));
         
     }
 
     private static void mostrarp() {
-        //insercion();
+        
         for(int i=0;i<listap.size();i++){
             listap.get(i).verPaciente();
         }
@@ -137,8 +141,9 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void modificarp() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
+        
 
     private static void eliminarp() {
       int elemento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Paciente a ELIMINAR: "));
@@ -172,6 +177,28 @@ public static List<Medico> listam=new LinkedList<Medico>();
         int elemento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el elemento a eliminar"));
       listam.remove(elemento);
       mostrarm();
+    }
+
+    private static void registrarh() {
+        int codigo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Codigo: "));
+        Date fecha=JOptionPane.showInputDialog("Ingrese Fecha: ");
+        String idpaciente=JOptionPane.showInputDialog("Ingrese Paciente: ");
+        String idmedico=JOptionPane.showInputDialog("Ingrese Genero: ");
+        String observaciones=JOptionPane.showInputDialog("Ingrese Genero: ");
+
+        listap.add(new Paciente(codigo,idpaciente,idmedico,observaciones));
+    }
+
+    private static void mostrarh() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void modificarh() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void eliminarh() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 
