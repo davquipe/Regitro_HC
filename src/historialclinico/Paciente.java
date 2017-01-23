@@ -30,6 +30,14 @@ public class Paciente {
                 + "\n Edad: "+edad+"\n Genero: "+genero);
     }    
 
+    public Paciente(int codigo, String idpaciente, String idmedico, String observaciones) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Paciente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 
    

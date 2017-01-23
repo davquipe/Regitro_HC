@@ -8,8 +8,6 @@ package registropacientes;
 import historialclinico.HistorialClinico;
 import historialclinico.Medico;
 import historialclinico.Paciente;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -23,6 +21,7 @@ public class RegistroPacientes {
     
 public static List<Paciente> listap=new LinkedList<Paciente>();  
 public static List<Medico> listam=new LinkedList<Medico>();  
+public static List<HistorialClinico> listah=new LinkedList<HistorialClinico>();  
 
 
     
@@ -37,20 +36,23 @@ public static List<Medico> listam=new LinkedList<Medico>();
         
         int opt=0;
         do{
-            opt=Integer.parseInt(JOptionPane.showInputDialog("Bienvenidos al Menu \n"
-                    + "1.- GESTIONAR PACIENTE \n"
-                    + "2.- GESTIONAR MEDICOS \n"
-                    + "3.- GESTIONAR HISTORIAL CLINICO \n"
-                    + "4.- Salir"));
+            opt=Integer.parseInt(JOptionPane.showInputDialog("Bienvenidos al Menu \n\n"
+                    + "-------------------------\n"
+                    + " 1.- GESTIONAR PACIENTE \n"
+                    + " 2.- GESTIONAR MEDICOS \n"
+                    + " 3.- GESTIONAR HISTORIAL CLINICO \n"
+                    + " 4.- Salir \n"
+                    + "-------------------------"));
             
-                
+               
             
             switch(opt){
                 case 1: paciente();break;
                 case 2: medicos();break;
                 case 3: historial();break;
                 case 4: opt=0;break;
-                default: JOptionPane.showMessageDialog(null,"La opcion no existe");
+                default: JOptionPane.showMessageDialog(null,"Opcion no Valida....!!!");
+                
             }
         }while(opt!=0);
     }
@@ -72,7 +74,7 @@ public static List<Medico> listam=new LinkedList<Medico>();
                 case 3: modificarp();break;
                 case 4: eliminarp();break;
                 case 5: opt=0;break;
-                default: JOptionPane.showMessageDialog(null,"La opcion no existe");
+                default: JOptionPane.showMessageDialog(null,"Opcion no Valida....!!!");
             }
         }while(opt!=0);
     }
@@ -94,7 +96,7 @@ public static List<Medico> listam=new LinkedList<Medico>();
                 case 3: modificarm();break;
                 case 4: eliminarm();break;
                 case 5: opt=0;break;
-                default: JOptionPane.showMessageDialog(null,"La opcion no existe");
+                default: JOptionPane.showMessageDialog(null,"Opcion no Valida....!!!");
             }
         }while(opt!=0);
     }
@@ -116,7 +118,7 @@ public static List<Medico> listam=new LinkedList<Medico>();
                 case 3: modificarh();break;
                 case 4: eliminarh();break;
                 case 5: opt=0;break;
-                default: JOptionPane.showMessageDialog(null,"La opcion no existe");
+                default: JOptionPane.showMessageDialog(null,"Opcion no Valida....!!!");
             }
         }while(opt!=0);
     }
@@ -141,13 +143,20 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void modificarp() {
+        listap.add(new Paciente());
+        //int ide=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Identificacion (#): "));
+        //String nom=JOptionPane.showInputDialog("Ingrese Nombre (Abc): ");
+        //int eda=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Edad (#): "));
+        //String gen=JOptionPane.showInputDialog("Ingrese Genero (Abc): ");
+       
         
     }
         
 
     private static void eliminarp() {
-      int elemento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Paciente a ELIMINAR: "));
+      int elemento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese numero de paciente a eliminar "));
       listap.remove(elemento);
+      JOptionPane.showMessageDialog(null, "Paciente de la Lista ELIMINADO");
       mostrarp();
     }
 
@@ -166,7 +175,6 @@ public static List<Medico> listam=new LinkedList<Medico>();
         for(int i=0;i<listam.size();i++){
             listam.get(i).verMedico();
         }
-        System.out.println("Medico: "+listam);
     }
 
     private static void modificarm() {
@@ -180,17 +188,20 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void registrarh() {
-        int codigo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Codigo: "));
-        Date fecha=JOptionPane.showInputDialog("Ingrese Fecha: ");
-        String idpaciente=JOptionPane.showInputDialog("Ingrese Paciente: ");
-        String idmedico=JOptionPane.showInputDialog("Ingrese Genero: ");
-        String observaciones=JOptionPane.showInputDialog("Ingrese Genero: ");
+        int codigo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Codigo (#): "));
+        String fecha=JOptionPane.showInputDialog("Ingrese Fecha (#): ");
+        String idpaciente=JOptionPane.showInputDialog("Ingrese Paciente (Abc): ");
+        String idmedico=JOptionPane.showInputDialog("Ingrese Genero (Abc): ");
+        String observaciones=JOptionPane.showInputDialog("Ingrese Observaciones (Abc): ");
 
         listap.add(new Paciente(codigo,idpaciente,idmedico,observaciones));
     }
 
     private static void mostrarh() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(int i=0;i<listam.size();i++){
+            listam.get(i).verMedico();
+        }
+        
     }
 
     private static void modificarh() {
@@ -198,7 +209,8 @@ public static List<Medico> listam=new LinkedList<Medico>();
     }
 
     private static void eliminarh() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int listahistorial=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el elemento eliminar"));
+        listah.remove(listahistorial);
     }
 }
 
