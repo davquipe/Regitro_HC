@@ -13,31 +13,30 @@ import javax.swing.JOptionPane;
  */
 public class Medico {
     
-    private String identificacion;
+    private int identificacion;
     private String nombre;
     private String apellidos;
     private String especialidad;
 
-    public Medico(String identificacion, String nombre, String apellidos, String especialidad) {
+    public Medico(int identificacion, String nombre, String apellidos, String especialidad) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.especialidad = especialidad;
-        
-        
     }
+
+   
     
     public void verMedico(){
         JOptionPane.showMessageDialog(null,"Identificacion: "+identificacion+"\n Nombre: "+nombre+" "
                 + "\n Apellidos: "+apellidos+"\n Especialidad: "+especialidad);
     }
-    
 
-    public String getIdentificacion() {
+    public int getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(String identificacion) {
+    public void setIdentificacion(int identificacion) {
         this.identificacion = identificacion;
     }
 
@@ -64,6 +63,9 @@ public class Medico {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
+    
+
+    
     
     
     

@@ -32,17 +32,16 @@ public static List<HistorialClinico> listah=new LinkedList<HistorialClinico>();
     public static void main(String[] args) {
         // TODO code application logic here
         
-        listap.add(new Paciente(32,"peres",12,"femenino"));
+        //listap.add(new Paciente(32,"peres",12,"femenino"));
+        //listah.add(new HistorialClinico(1234,123,"vzdf","alberto","ninguna"))
         
         int opt=0;
         do{
             opt=Integer.parseInt(JOptionPane.showInputDialog("Bienvenidos al Menu \n\n"
-                    + "-------------------------\n"
-                    + " 1.- GESTIONAR PACIENTE \n"
-                    + " 2.- GESTIONAR MEDICOS \n"
-                    + " 3.- GESTIONAR HISTORIAL CLINICO \n"
-                    + " 4.- Salir \n"
-                    + "-------------------------"));
+                    + " 1. GESTIONAR PACIENTE \n"
+                    + " 2. GESTIONAR MEDICOS \n"
+                    + " 3. GESTIONAR HISTORIAL CLINICO \n"
+                    + " 4. Salir"));
             
                
             
@@ -161,12 +160,12 @@ public static List<HistorialClinico> listah=new LinkedList<HistorialClinico>();
     }
 
     private static void registrarm() {
-        String ide2=JOptionPane.showInputDialog("Ingrese Identificacion: ");
-        String nom2=JOptionPane.showInputDialog("Ingrese Nombre: ");
-        String apw2=JOptionPane.showInputDialog("Ingrese Apellido: ");
-        String esp2=JOptionPane.showInputDialog("Ingrese Especialidad: ");
+        int ide=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Identificacion: "));
+        String nom=JOptionPane.showInputDialog("Ingrese Nombre: ");
+        String apw=JOptionPane.showInputDialog("Ingrese Apellido: ");
+        String esp=JOptionPane.showInputDialog("Ingrese Especialidad: ");
 
-        listam.add(new Medico(ide2,nom2,apw2,esp2));
+        listam.add(new Medico(ide,nom,apw,esp));
         
     }
 
@@ -194,7 +193,7 @@ public static List<HistorialClinico> listah=new LinkedList<HistorialClinico>();
         String idmedico=JOptionPane.showInputDialog("Ingrese Genero (Abc): ");
         String observaciones=JOptionPane.showInputDialog("Ingrese Observaciones (Abc): ");
 
-        listap.add(new Paciente(codigo,idpaciente,idmedico,observaciones));
+        listah.add(new HistorialClinico(codigo,fecha,idpaciente,idmedico,observaciones));
     }
 
     private static void mostrarh() {
@@ -205,7 +204,7 @@ public static List<HistorialClinico> listah=new LinkedList<HistorialClinico>();
     }
 
     private static void modificarh() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     private static void eliminarh() {

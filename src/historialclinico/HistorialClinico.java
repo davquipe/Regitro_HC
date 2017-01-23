@@ -30,10 +30,11 @@ public class HistorialClinico {
         this.idMedico = idMedico;
         this.observasiones = observasiones;
     }
-    
-    
-    
-    
+
+    public HistorialClinico(int codigo, String fecha, String idpaciente, String idmedico, String observaciones) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
     public void verHistorialClinico(){
         JOptionPane.showMessageDialog(null,"Codigo: "+codigo+"\n Fecha: "+fecha+" "
                 + "\n idPaciente: "+idPaciente+"\n observacion: "+observasiones);
